@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Underline-on-hover for ls prompts */
+.ls-hover-effect {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+.ls-hover-effect::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: currentColor; /* inherit black/white only */
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.2s;
+}
+.ls-hover-effect:hover::after,
+.ls-hover-effect:focus::after {
+  width: 100%;
+}
